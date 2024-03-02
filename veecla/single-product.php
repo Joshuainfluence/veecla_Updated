@@ -174,41 +174,20 @@ require_once __DIR__ . "/header.php";
                             require_once __DIR__ . "/public/cart.classes.php";
                             require_once __DIR__ . "/public/cartSelect.contr.php";
                             $productId = $row['id'];
-                            $is_product = 1;
                             $carts = new SelectCartContr($productId);
-                            $carts = $carts->existProduct();
-                            if ($carts == true) {
-                                foreach ($carts as $cart) {
-                                    if ($cart['id'] == $productId) {
+                            $isProductInCart = $carts->existProduct();
+                        
+                            // Check if $isProductInCart is defined and not empty
+                            if (isset($isProductInCart) && !empty($isProductInCart)) {
                             ?>
-                                        <div class="main-border-button">
-                                            <a href="inc/cart.inc.php?id=<?= $row['id'] ?>">Already Added</a>
-                                        </div>
-                                    <?php
-                                    } else {
-                                    ?>
-
-                                    <?php
-                                    }
-
-                                    ?>
-
-
-
-                                <?php
-                                }
-                            } else {
-                                ?>
                                 <div class="main-border-button">
-                                    <a href="inc/cart.inc.php?id=<?= $row['id'] ?>">Add To Cart</a>
+                                    <a href="inc/cart.inc.php?id=<?= $productId ?>">Already Added</a>
                                 </div>
-                            <?php
-                            }
-                            ?>
-
-
-
-
+                            <?php } else { ?>
+                                <div class="main-border-button">
+                                    <a href="inc/cart.inc.php?id=<?= $productId ?>">Add To Cart</a>
+                                </div>
+                            <?php } ?>
                         </div>
 
                     </div>

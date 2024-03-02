@@ -1,8 +1,3 @@
-<?php
-require_once __DIR__ . "/config/session.php";
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +6,7 @@ require_once __DIR__ . "/config/session.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/index.css">
-    <!-- <link rel="stylesheet" href="../assets/login.css"> -->
+    <!-- <link rel="stylesheet" href="assets/login.css"> -->
     <!-- <link rel="icon" type="image/x-icon" href="img/logo5.png" /> -->
     <script src="assets/sweetalert/sweetalert2.all.min.js"></script>
     <script src="assets/sweetalert/jquery-3.6.4.min.js"></script>
