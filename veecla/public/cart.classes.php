@@ -57,4 +57,16 @@ class Cart extends Dbh
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
+
+    protected function deleteProduct($id)
+    {
+        $sql = "DELETE FROM cart WHERE id = ?";
+        $stmt = $this->connection()->prepare($sql);
+        if (!$stmt->execute([$id])) {
+            $stmt = null;
+            exit();
+        }
+
+        $stmt = null;
+    }
 }

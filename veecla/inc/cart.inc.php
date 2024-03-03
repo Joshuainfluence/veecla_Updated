@@ -12,14 +12,17 @@ if (!isset($_SESSION['id'])) {
     // selecting all from the products we want to add to cart table in the database
     $productId = $_GET['id'];
     $usersId = $_SESSION['id'];
+    // $product_quantity = isset($_SESSION['product_quantity']) ? $_SESSION['product_quantity'] : 1;
+    $product_quantity = isset($_POST['count']);
     $details = new SelectCartContr($productId);
     header("location: ../cart.php?id=$productId");
     $rows = $details->selectcart2($productId);
+   
 
     // print_r($rows);
     // looping through the products table to get the values of the product we want to insert to database
     foreach ($rows as $row) {
-        $product_quantity = 1;
+
         $productId = $row['id'];
         $product_name = $row['product_name'];
         $product_price = $row['product_price'];

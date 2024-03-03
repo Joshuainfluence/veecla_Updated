@@ -22,6 +22,23 @@ class CartContr extends Cart
     public function addCart2()
     {
         return $this->AddtoCart($this->product_name, $this->product_price, $this->product_quantity, $this->users_id, $this->product_id, $this->product_image);
-       header("location: checkout.php?successtocat");
+        header("location: checkout.php?successtocat");
+    }
+}
+
+
+class DeleteCartContr extends Cart
+{
+    private $id;
+
+    public function __construct($id)
+    {
+        $this->id = $id;
+    }
+
+    public function productDelete()
+    {
+
+        $this->deleteProduct($this->id);
     }
 }

@@ -120,7 +120,7 @@ https://templatemo.com/tm-571-hexashop
                                     ?>
                                         <li><a href="config/logout.php">Logout <i class="fa fa-sign-out"></i></a></li>
                                         <li><a href="cart.php?id=cart"><i class="fa fa-shopping-cart"></i></a></li>
-                                        <li><a href="#">Profile</a></li>
+                                        <li><a href="profile.php?id=profile">Profile</a></li>
                                         <li><a href="#">Settings</a></li>
                                     <?php
                                     } else {

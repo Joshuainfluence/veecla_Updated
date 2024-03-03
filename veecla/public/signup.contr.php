@@ -38,7 +38,7 @@ class SignupContr extends Signup
         $this->password = $password;
         $this->conpassword = $conpassword;
         $this->check = $check;
-       
+
         // fpr image
         // Use $files['product_image'] instead of $files['image']
         $this->image_name = $files['profileImage']['name'] ?? '';
@@ -184,7 +184,7 @@ class SignupContr extends Signup
         $_SESSION[$type] = $message;
     }
 
-    
+
 
 
     public function signUser()
@@ -234,5 +234,62 @@ class SignupContr extends Signup
         $this->set_message("success", "Registration successful");
 
         $this->RegisterUser($this->fullName, $this->username, $this->email, $this->password, $this->newName());
+    }
+}
+
+
+
+class EmailSubcription extends Signup
+{
+    private $name;
+    private $email;
+
+    public function __construct($name, $email)
+    {
+        $this->name = $name;
+        $this->email = $email;
+    }
+
+    private function emptyInput()
+    {
+        $result = 0;
+        if (empty($this->name) || empty($this->email)) {
+            $result = true;
+        } else {
+            $result = false;
+        }
+        return $result;
+    }
+
+    private function set_message($type, $message)
+    {
+        $_SESSION[$type] = $message;
+    }
+
+    private function invalidEmail()
+    {
+        $result = 0;
+        if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+        return $result;
+    }
+
+    public function subscribeEmail()
+    {
+        if ($this->emptyInput() == true) {
+            $this->set_message("error", "Fields cannot be empty");
+            header("Location: ../registration/signup.php?error=emptyfields");
+            exit();
+        }
+        if ($this->invalidEmail() == false) {
+            $this->set_message("error", "Invalid Email format");
+            header("Location: ../registration/signup.php??error=invalidEmail");
+            exit();
+        }
+
+        $this->emailSubscribe($this->name, $this->email);
     }
 }

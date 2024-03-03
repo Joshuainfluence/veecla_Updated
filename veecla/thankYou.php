@@ -48,14 +48,14 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="col">
-                            <h1 style="font-size: 100px;">😓</h1>
+                            <h1 style="font-size: 100px;">🥰</h1>
                         </div>
                         <div class="col">
-                            <h1>You must create account or login your account to be able to Order Products</h1>
-                            <h3>Follow the link below to Create or Login your Account</h3>
+                            <h1>Thank You for subscribing to our Newsletter</h1>
+                            <h3>You will receive latest Updates and news from Us</h3>
                         </div>
                         <div class="col d-flex justify-content-center align-items-center">
-                            <a href="registration/login.php">Login Account</a>
+                            <a href="home.php?id=home">Back to Home</a>
                         </div>
                     </div>
                 </div>

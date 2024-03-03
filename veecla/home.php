@@ -30,8 +30,9 @@ require_once __DIR__ . "/config/session.php";
                     <div class="thumb">
                         <div class="inner-content">
                             <h4>We Are VeeclaShop</h4>
-                            <h4><?= $_SESSION['location'] ?></h4>
-                            <span>Realising true beauty</span>
+                            <h4></h4>
+                            <span>Realising true beauty <br><?= $_SESSION['location'] ?></span>
+                            
                             <div class="main-border-button">
                                 <a href="#">Purchase Now!</a>
                             </div>

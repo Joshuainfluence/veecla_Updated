@@ -7,7 +7,7 @@
            <h2>By Subscribing To Our Newsletter You Can Get 30% Off</h2>
            <span>Details to details is what makes veecla different from the other company.</span>
          </div>
-         <form id="subscribe" action="" method="get">
+         <form id="subscribe" action="inc/subscribe.inc.php" method="POST">
            <div class="row">
              <div class="col-lg-5">
                <fieldset>
@@ -27,6 +27,7 @@
            </div>
          </form>
        </div>
+       
        <div class="col-lg-4">
          <div class="row">
            <div class="col-6">

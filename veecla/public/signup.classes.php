@@ -43,4 +43,18 @@ class Signup extends Dbh{
        
 
     }
+
+    protected function emailSubscribe($name, $email){
+        $sql = "INSERT INTO subscribe(name, email) VALUES(:name, :email)";
+        $statement = $this->connection()->prepare($sql);       
+        $statement->bindParam(':name', $name);       
+        $statement->bindParam(':email', $email);
+        if (!$statement->execute()) {
+            $statement = null;
+            header("Location: ../inc/signup.php?error=stmtfailed");
+            exit();
+        }
+
+       $statement = null;
+    }
 }

@@ -9,7 +9,7 @@
                         </div>
                         <ul>
                             <li><a href="#">Agbor, Delta State, Nigeria</a></li>
-                            <li><a href="#">veeclaconcept.com</a></li>
+                            <li><a href="#">veeclaconcept@gmail.com</a></li>
                             <li><a href="#">+23490900000909</a></li>
                         </ul>
                     </div>

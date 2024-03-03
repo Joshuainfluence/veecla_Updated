@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . "/header.php";
+require_once __DIR__ . "/config/session.php";
 
 ?>
 <!-- ***** Header Area End ***** -->
@@ -158,30 +159,114 @@ require_once __DIR__ . "/header.php";
                             <i class="fa fa-quote-left"></i>
                             <p><?= $row['product_info'] ?>.</p>
                         </div>
+
                         <div class="quantity-content">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="text-danger">
+                                        <?php
+                                        if ($row['product_unit'] >= 10) {
+                                        ?>
+                                            In stock
+                                        <?php
+                                        } else {
+                                        ?>
+                                            <?= $row['product_unit'] ?> Units left
+                                        <?php
+                                        }
+                                        ?>
+                                    </h5>
+                                </div>
+                            </div>
                             <div class="left-content">
                                 <h6>No. of Orders</h6>
                             </div>
                             <div class="right-content">
                                 <div class="quantity buttons_added">
-                                    <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+                                    <!-- <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus"> -->
+
+
+
+
+                                    <div class="row">
+                                        <label for="" class="fw-bold fs-2" id="countLabel">0</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="buttons d-flex">
+                                            <button id="decrease" class="button-cart-alt3">-</button>
+                                            <button id="one" class="button-cart-alt3">1</button>
+                                            <button id="increase" class="button-cart-alt3">+</button>
+                                        </div>
+                                        <script>
+                                            let count = 0;
+                                            let price = <?= $row['product_price'] ?>; // Assuming $row['product_price'] holds the product price
+
+                                            function updateTotal() {
+                                                let total = count * price;
+                                                document.getElementById("totalPrice").innerHTML = "$" + total.toFixed(2); // Displaying total with 2 decimal places
+                                                // sessionStorage.setItem('product_quantity', count);
+
+                                                let xhr = new XMLHttpRequest();
+                                                xhr.open("POST", "inc/cart.inc.php", true);
+                                                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                                                xhr.onreadystatechange = function() {
+                                                    if (xhr.readyState === 4 && xhr.status === 200) {
+                                                        // Response from PHP script
+                                                        console.log(xhr.responseText);
+                                                    }
+                                                };
+                                                xhr.send("count=" + count);
+
+                                            }
+
+
+                                            document.getElementById("decrease").onclick = function() {
+                                                count = Math.max(0, count - 1); // Ensure count doesn't go negative
+                                                document.getElementById("countLabel").innerHTML = count;
+                                                updateTotal();
+                                            }
+
+                                            document.getElementById("one").onclick = function() {
+                                                count = 1;
+                                                document.getElementById("countLabel").innerHTML = count;
+                                                updateTotal();
+                                            }
+
+                                            document.getElementById("increase").onclick = function() {
+                                                count += 1;
+                                                document.getElementById("countLabel").innerHTML = count;
+                                                updateTotal();
+                                            }
+
+
+
+                                            // Initial update of total
+                                            updateTotal();
+                                            // sessionStorage.setItem('product_quantity', count);
+                                        </script>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="total">
-                            <h4>Total: $210.00</h4>
+                            <h4 id="totalPrice">$<?= $row['product_price'] ?></h4>
+                            
+                        
+
+
+
                             <?php
                             require_once __DIR__ . "/public/cart.classes.php";
                             require_once __DIR__ . "/public/cartSelect.contr.php";
                             $productId = $row['id'];
                             $carts = new SelectCartContr($productId);
                             $isProductInCart = $carts->existProduct();
-                        
+
                             // Check if $isProductInCart is defined and not empty
                             if (isset($isProductInCart) && !empty($isProductInCart)) {
                             ?>
                                 <div class="main-border-button">
-                                    <a href="inc/cart.inc.php?id=<?= $productId ?>">Already Added</a>
+                                    <p>Already Added</p>
                                 </div>
                             <?php } else { ?>
                                 <div class="main-border-button">

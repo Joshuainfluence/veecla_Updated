@@ -44,6 +44,10 @@ figure, header, nav, section, article, aside, footer, figcaption {
   outline: 0;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 .clearfix:after {
   content: ".";
   display: block;
@@ -1831,6 +1835,7 @@ Products Page
   z-index: 2;
   text-align: center;
   bottom: -60px;
+  
   width: 100%;
   opacity: 0;
   visibility: hidden;
