@@ -16,4 +16,10 @@ class UserProfileContrVeecla extends UserProfileVeecla{
          $result = $this->showUserProfileVeecla($this->id);
          return $result;
     }
+
+    public function userVerify()
+    {
+        $data = $this->verifyUser($this->id);
+        return $data;
+    }
 }

@@ -10,7 +10,7 @@ require_once __DIR__ . "/header.php";
             <div class="col-lg-12">
                 <div class="inner-content">
                     <h2>Contact Us</h2>
-                    <span>Awesome, clean &amp; creative HTML5 Template</span>
+                    <span>Drop a message&amp; We'll reply🌚</span>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@ require_once __DIR__ . "/header.php";
             <div class="col-lg-6">
                 <div class="section-heading">
                     <h2>Say Hello. Don't Be Shy!</h2>
-                    <span>Details to details is what makes Hexashop different from the other themes.</span>
+                    <!-- <span>Details to details is what makes Hexashop different from the other themes.</span> -->
                 </div>
                 <form id="contact" action="" method="post">
                     <div class="row">

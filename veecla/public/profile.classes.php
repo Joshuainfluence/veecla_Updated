@@ -15,4 +15,16 @@ class UserProfileVeecla extends Dbh{
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+    
+    protected function verifyUser($username){
+        $sql = "SELECT * FROM users WHERE username = ?";
+        $stmt = $this->connection()->prepare($sql);
+        if (!$stmt->execute([$username])) {
+            $stmt = null;
+            exit();
+        }
+        $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $details;
+    }
+
 }

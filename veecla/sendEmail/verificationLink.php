@@ -62,7 +62,7 @@
             <div class="title">
                 A verification link was sent to your Email, Click the button to activate account.
             </div>
-            <form action="https://mail.google.com/mail/u/0/#inbox/" method="POST">
+            <form action="https://mail.google.com/mail/u/0/?ogbl#inbox" method="POST">
                 <input type="hidden" name="">
                 <input type="submit" value="Check Gmail" class="button">
             </form>

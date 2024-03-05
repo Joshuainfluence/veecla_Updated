@@ -158,7 +158,7 @@ require_once __DIR__ . "/header.php";
                 <div class="service-item">
                     <h4>Quality</h4>
                     <p>Quality is our foundation. We prioritize premium products without the premium price tag. Enjoy unbeatable value and reliability. With us, affordability meets excellence.</p> <br><br>
-                    <img src="assets/images/authenticity (1).png" alt="">
+                    <img src="assets/images/authenticity (3).png" alt="">
                 </div>
             </div>
         </div>

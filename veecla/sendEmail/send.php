@@ -6,15 +6,15 @@ use phpMailer\PHPMailer\Exception;
 require_once(__DIR__ . "/phpMailer/src/Exception.php");
 require_once(__DIR__ . "/phpMailer/src/PHPMailer.php");
 require_once(__DIR__ . "/phpMailer/src/SMTP.php");
-require_once(__DIR__ . "/../admin/admin.classes.php");
-require_once(__DIR__ . "/../admin/verifyUserContr.php");
+require_once(__DIR__ . "/../public/profile.classes.php");
+require_once(__DIR__ . "/../public/profile.contr.php");
 require_once(__DIR__ . "/../config/session.php");
 require_once(__DIR__ . "/../config/dbh.php");
 
 
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
-    $value = new VerifyUser($username);
+    $value = new UserProfileContrVeecla($username);
     $rows = $value->userVerify($username);
     $mail = new PHPMailer(true);
 
@@ -45,7 +45,7 @@ if (isset($_SESSION['username'])) {
     <div><h2 style='font-size:20px; font-family:sans-serif; font-weight:600;'>Hello " . ucfirst($row['fullName']) . "</h2></div>
     <div style='font-size:15px; font-family:sans-serif;'>Click on the button below to Activate your account<b>
     <br>
-   <form action='http://localhost/veecla/inc/login.php?id=" . $row['id'] . "' method='POST'>
+   <form action='http://localhost/veecla_updated/veecla/registration/login.php?id=" . $row['id'] . "' method='POST'>
     <input type='submit' name='auth' style='width:100px; height:40px; color:#fff; font-size:15px; border:1px solid red; background-color: red; margin-top: 2rem;' value='Verify'>
    </form>
     </div>

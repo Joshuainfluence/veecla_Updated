@@ -12,7 +12,7 @@ require_once __DIR__ . "/config/session.php";
             <div class="col-lg-12">
                 <div class="inner-content">
                     <h2>Single Product Page</h2>
-                    <span>Awesome &amp; Creative HTML CSS layout by TemplateMo</span>
+                    <!-- <span>Awesome &amp; Creative HTML CSS layout by TemplateMo</span> -->
                 </div>
             </div>
         </div>
@@ -206,16 +206,16 @@ require_once __DIR__ . "/config/session.php";
                                                 document.getElementById("totalPrice").innerHTML = "$" + total.toFixed(2); // Displaying total with 2 decimal places
                                                 // sessionStorage.setItem('product_quantity', count);
 
-                                                let xhr = new XMLHttpRequest();
-                                                xhr.open("POST", "inc/cart.inc.php", true);
-                                                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                                                xhr.onreadystatechange = function() {
-                                                    if (xhr.readyState === 4 && xhr.status === 200) {
-                                                        // Response from PHP script
-                                                        console.log(xhr.responseText);
-                                                    }
-                                                };
-                                                xhr.send("count=" + count);
+                                                // let xhr = new XMLHttpRequest();
+                                                // xhr.open("POST", "inc/cart.inc.php", true);
+                                                // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                                                // xhr.onreadystatechange = function() {
+                                                //     if (xhr.readyState === 4 && xhr.status === 200) {
+                                                //         // Response from PHP script
+                                                //         console.log(xhr.responseText);
+                                                //     }
+                                                // };
+                                                // xhr.send("count=" + count);
 
                                             }
 

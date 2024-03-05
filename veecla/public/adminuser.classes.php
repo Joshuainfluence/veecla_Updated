@@ -30,4 +30,16 @@ class AdminUser extends Dbh{
         $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $details;
     }
+
+    protected function deleteUser($id){
+        $sql = "DELETE FROM users WHERE id = ?";
+        $stmt = $this->connection()->prepare($sql);
+        if (!$stmt->execute([$id])) {
+            $stmt = null;
+            exit();
+            header("location: index.php?error");
+        }
+
+        $stmt = null;
+    }
 }

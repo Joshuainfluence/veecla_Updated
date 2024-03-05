@@ -32,7 +32,7 @@ require_once __DIR__ . "/config/session.php";
                             <h4>We Are VeeclaShop</h4>
                             <h4></h4>
                             <span>Realising true beauty <br><?= $_SESSION['location'] ?></span>
-                            
+
                             <div class="main-border-button">
                                 <a href="#">Purchase Now!</a>
                             </div>
@@ -455,13 +455,17 @@ require_once __DIR__ . "/config/session.php";
             <div class="col-lg-6">
                 <div class="left-content">
                     <h2>Explore Our Products</h2>
-                    <span>You are allowed to use this HexaShop HTML CSS template. You can feel free to modify or edit this layout. You can convert this template as any kind of ecommerce CMS theme as you wish.</span>
-                    <div class="quote">
-                        <i class="fa fa-quote-left"></i>
-                        <p>You are not allowed to redistribute this template ZIP file on any other website.</p>
-                    </div>
-                    <p>There are 5 pages included in this HexaShop Template and we are providing it to you for absolutely free of charge at our TemplateMo website. There are web development costs for us.</p>
-                    <p>If this template is beneficial for your website or business, please kindly <a rel="nofollow" href="https://paypal.me/templatemo" target="_blank">support us</a> a little via PayPal. Please also tell your friends about our great website. Thank you.</p>
+                    <span>Welcome to Veecla, your ultimate destination for all things lip gloss and skincare! Dive into our exquisite collection and discover a world of beauty and wellness at your fingertips..</span>
+
+                    <p>Indulge in the luxury of radiant lips with our stunning range of lip glosses. From shimmering shades to glossy finishes, Veecla offers a diverse selection to suit every mood and occasion. Let your lips steal the spotlight and make a statement wherever you go..</p>
+                    <p>Elevate your skincare routine to new heights with our premium skincare products. Explore our curated selection of cleansers, moisturizers, serums, and more, formulated to nourish and rejuvenate your skin. Say goodbye to dullness and hello to glowing, radiant skin with Veecla.</p>
+                    <p>
+                        At Veecla, we believe in the power of self-care. Pamper yourself with our luxurious skincare treatments and experience the transformative effects firsthand. From indulgent face masks to soothing creams, our products are designed to enhance your natural beauty and boost your confidence.
+
+                        With Veecla, beauty is more than skin deep. Our commitment to quality and excellence ensures that every product is carefully crafted to deliver exceptional results. Whether you're a beauty enthusiast or a skincare novice, Veecla has something for everyone.
+
+                        Join us on a journey of beauty and self-discovery. Explore our collection today and unlock the secrets to healthy, radiant skin and luscious lips with Veecla.
+                    </p>
                     <div class="main-border-button">
                         <a href="products.html">Discover More</a>
                     </div>
@@ -472,18 +476,18 @@ require_once __DIR__ . "/config/session.php";
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="leather">
-                                <h4>Leather Bags</h4>
+                                <h4>Lip glozzy</h4>
                                 <span>Latest Collection</span>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="first-image">
-                                <img src="assets/images/explore-image-01.jpg" alt="">
+                                <img src="assets/images/002.jpg" alt="">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="second-image">
-                                <img src="assets/images/explore-image-02.jpg" alt="">
+                                <img src="assets/images/003.jpg" alt="">
                             </div>
                         </div>
                         <div class="col-lg-6">

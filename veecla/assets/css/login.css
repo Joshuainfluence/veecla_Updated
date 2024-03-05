@@ -35,7 +35,7 @@
     justify-content: center;
     align-items: center;
     box-shadow: 5px 5px 5px 5px grey;
-    background-image: url(../img/6556e5fb45239eedd9b5427160b007de.jpg);
+    background-image: url(../images/affordability.png);
     object-fit: cover;
     background-size: cover;
     animation: 10s influence linear infinite;
@@ -137,28 +137,28 @@ p a:hover {
 
 @keyframes influence {
     0% {
-        background-image: url(../image/download\ \(4\).jpeg);
+        background-image: url(../images/1.jpg);
         object-fit: cover;
     }
 
     20% {
-        background-image: url(../image/images.jpeg);
+        background-image: url(../images/005.jpg);
     }
 
     40% {
-        background-image: url(../image/download\ \(3\).jpeg);
+        background-image: url(../images/006.jpg);
     }
 
     60% {
-        background-image: url(../image/images.png);
+        background-image: url(../images/002.jpg);
     }
 
     80% {
-        background-image: url(../image/images\ \(2\).jpeg);
+        background-image: url(../images/2.jpg);
     }
 
     100% {
-        background-image: url(../image/images\ \(3\).jpeg);
+        background-image: url(../images/4.jpg);
     }
 }
 
