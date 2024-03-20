@@ -418,6 +418,25 @@ header
   display: none;
 }
 
+.header-area .main-nav .menu-search {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .header-area .main-nav .menu-search {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    top: 33px;
+    width: 32px;
+    height: 40px;
+    text-indent: -9999em;
+    z-index: 99;
+    right: 40px;
+    
+  }
+}
+
 .background-header .main-nav .menu-trigger {
   top: 23px;
 }

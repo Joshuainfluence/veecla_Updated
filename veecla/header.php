@@ -75,6 +75,7 @@ https://templatemo.com/tm-571-hexashop
                                 <li class="scroll-to-section"><a href="#women">Skincare</a></li>
                                 <li class="scroll-to-section"><a href="#kids">LipTreat</a></li>
                                 <li class="scroll-to-section"><a href="#accessories">Accessories</a></li>
+                                <li><a href="search.php?id=search"><i class="fa fa-search"></i></a></li>
                                 <li class="scroll-to-section"><a href="#explore">Explore</a></li>
                                 <!-- <li class="scroll-to-section"><a href="#accessories">Vlog</a></li> -->
 
@@ -82,6 +83,7 @@ https://templatemo.com/tm-571-hexashop
 
 
                                 <li class="submenu">
+                                
                                     <a href="javascript:;">Pages</a>
                                     <ul>
                                         <li><a href="about.php?id=about">About Us</a></li>
@@ -89,6 +91,7 @@ https://templatemo.com/tm-571-hexashop
                                         <!-- <li><a href="single-product.php?id=single">Single Product</a></li> -->
                                         <li><a href="contact.php?id=contact">Contact Us</a></li>
                                         <li><a href="faqs.php?id=faqs">FAQS</a></li>
+                                        
 
                                     </ul>
                                 </li>
@@ -101,6 +104,7 @@ https://templatemo.com/tm-571-hexashop
                                 <!-- <li><a href="single-product.html">Single Product</a></li> -->
                                 <li><a href="contact.php?id=contact">Contact Us</a></li>
                                 <li><a href="faqs.php?id=faqs">FAQS</a></li>
+                                <li><a href="search.php?id=search"><i class="fa fa-search"></i></a></li>
 
                             <?php
 
@@ -137,6 +141,13 @@ https://templatemo.com/tm-571-hexashop
                             </li>
                             
                         </ul>
+                        <!-- <a href="" style="margin-top: 6%; display:flex; justify-content:center; margin-left:50%;">
+                            <span><i class="fa fa-search fa-2x text-dark"></i></span>
+                            
+                        </a> -->
+                        <!-- <a class='menu-search'>
+                            <span><i class="fa fa-search fa-2x"></i></span>
+                        </a> -->
                         <a class='menu-trigger'>
                             <span>Menu</span>
                         </a>
