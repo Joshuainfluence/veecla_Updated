@@ -4,7 +4,7 @@ require_once __DIR__ . "/header.php";
 ?>
 <style>
     section {
-        margin-top: 7%;
+        margin-top: 10%;
     }
     @media screen and (max-width:992px) {
         section{
@@ -12,6 +12,19 @@ require_once __DIR__ . "/header.php";
         }
     }
 </style>
+<script src="assets/sweetalert/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#search').keyup(function() {
+            var name = $("#search").val();
+            $.post("searchlist.php", {
+                suggestion: name
+            }, function(data, status) {
+                $("#suggestion").html(data)
+            });
+        })
+    })
+</script>
 <section>
     <div class="container">
         <div class="row">
@@ -25,6 +38,7 @@ require_once __DIR__ . "/header.php";
                             <input type="submit" value="Search">
                         <!-- </div> -->
                     </div>
+                    <p id="suggestion"></p>
                 </form>
             </div>
         </div>

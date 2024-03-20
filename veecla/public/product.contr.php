@@ -283,3 +283,24 @@ class ProductContr extends Product
         }
     }
 }
+
+
+class ProductList extends Product{
+    private $is_product;
+
+    public function __construct($is_product)
+    {
+        $this->is_product = $is_product;
+    }
+
+    public function displayProducts2(){
+        // This statment will return false so the next statement will run
+        if ($this->is_product !== 0) {          
+            exit();
+        }
+       
+        $data1 = $this->displayProducts($this->is_product);
+        return $data1;
+       
+    }
+}
