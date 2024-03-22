@@ -61,7 +61,7 @@ https://templatemo.com/tm-571-hexashop
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="index.html" class="logo">
-                            <img src="assets/images/log2.png" style="width:150px; height:80px;">
+                            <img src="assets/images/logologo.png" style="width:150px; height:50px;">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->

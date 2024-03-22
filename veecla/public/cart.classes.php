@@ -46,7 +46,7 @@ class Cart extends Dbh
 
     protected function productExist($id)
     {
-        $sql = "SELECT * FROM cart WHERE product_id = ?";
+        $sql = "SELECT * FROM cart WHERE product_id = ? AND userid = ?";
         $stmt = $this->connection()->prepare($sql);
         if (!$stmt->execute([$id])) {
             $stmt = null;

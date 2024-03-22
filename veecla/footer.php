@@ -5,7 +5,7 @@
                 <div class="col-lg-3">
                     <div class="first-item">
                         <div class="logo">
-                            <img src="assets/images/log2.png" style="width:150px; height:80px;" alt="hexashop ecommerce templatemo">
+                            <img src="assets/images/logologo.png" style="width:150px; height:50px;" alt="hexashop ecommerce templatemo">
                         </div>
                         <ul>
                             <li><a href="#">Agbor, Delta State, Nigeria</a></li>
