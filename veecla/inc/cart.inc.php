@@ -13,7 +13,7 @@ if (!isset($_SESSION['id'])) {
     $productId = $_GET['id'];
     $usersId = $_SESSION['id'];
     // $product_quantity = isset($_SESSION['product_quantity']) ? $_SESSION['product_quantity'] : 1;
-    $product_quantity = isset($_POST['count']);
+    $product_quantity = $_GET['quantity'];
     $details = new SelectCartContr($productId);
     header("location: ../cart.php?id=$productId");
     $rows = $details->selectcart2($productId);
@@ -30,6 +30,7 @@ if (!isset($_SESSION['id'])) {
 
         // inserting those values to the new cart table in the database
         $data = new CartContr($product_name, $product_price, $product_quantity, $usersId, $productId, $product_image);
+        
         return $data->addCart2();
     }
 }

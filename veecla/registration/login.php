@@ -85,6 +85,9 @@ require_once __DIR__ . "/../config/session.php";
             <div class="content">
                 <!-- displays an alert when user signup in successfully -->
                 <div class="alert"></div>
+                <div class="logo-img">
+                    <img src="../assets/images/logologo.png" alt="">
+                </div>
                 <div class="title">
                     Login your Account to get access
                 </div>

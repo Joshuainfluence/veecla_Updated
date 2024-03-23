@@ -11,6 +11,8 @@
     <script src="assets/sweetalert/sweetalert2.all.min.js"></script>
     <script src="assets/sweetalert/jquery-3.6.4.min.js"></script>
     <link rel="icon" type="image/x-icon" href="assets/images/logo5.png" />
+    <link href="https://fonts.googleapis.com/css2?family=GucciSanse&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -72,6 +74,19 @@
             select option {
                 background-color: #fff;
                 color: #000;
+            }
+
+            h1 {
+                font-family: 'GucciSans';
+            }
+
+            @font-face {
+                font-family: 'GucciSans';
+                src: url('path/to/GucciSans.woff2') format('woff2'),
+                    /* Modern Browsers */
+                    url('path/to/GucciSans.woff') format('woff');
+                /* Older Browsers */
+                /* Add more src lines if you have different font file formats */
             }
 
             @media screen and (max-width:992px) {

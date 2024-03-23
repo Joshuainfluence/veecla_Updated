@@ -12,10 +12,9 @@ $rows = $rows->displayProducts2();
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-        For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
-
+    <h1 class="h3 mb-2 text-gray-800">Products</h1>
+    <p class="mb-4">All products of different categoreis <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+        <!-- <a target="_blank" href="https://datatables.net">official DataTables documentation</a> -->
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -62,7 +61,7 @@ $rows = $rows->displayProducts2();
 
                                 
                                 <td><?= $row['product_name'] ?></td>
-                                <td><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#productDescription">View <i class="fa fa-eye"></i< /button>
+                                <td><button type="button" class="alert alert-info" data-bs-toggle="modal" data-bs-target="#productDescription"><i class="fa fa-eye"></i> </button>
                                 </td>
                                 <div class="modal fade" id="productDescription" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
@@ -85,13 +84,13 @@ $rows = $rows->displayProducts2();
                                 </div>
                                 <td>$<?= $row['product_price'] ?></td>
                                 <td><?= $row['product_unit'] ?></td>
-                                <td class="info"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">View <i class="fa fa-eye"></i></button></td>
+                                <td class="info"><button type="button" class="alert alert-success" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-eye"></i></button></td>
                                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="exampleModalLabel">Product Information</h5>
-                                                <button type="button" class="btn-close btn btn-danger" data-bs-dismiss="modal" aria-label="Close">X</button>
+                                                <button type="button" class="btn-close btn btn-danger" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
                                             </div>
 
                                             <div class="modal-body">
@@ -106,8 +105,8 @@ $rows = $rows->displayProducts2();
                                     </div>
                                 </div>
 <td><?= $row['product_category']?></td>
-                                <td><a href="delete.inc.php?id=<?= $row['id']; ?>" class="btn-del btn btn-danger">Delete</a></td>
-                                <td><a href="edit_product.php?id=<?= $row['id']; ?> m=1" class="btn-del btn btn-warning">Edit</a></td>
+                                <td><a href="delete.inc.php?id=<?= $row['id']; ?>" class="btn-del btn alert-danger"><i class="fa fa-trash"></i></a></td>
+                                <td><a href="edit_product.php?id=<?= $row['id']; ?> m=1" class="btn-del btn alert-warning"><i class="fa fa-edit"></i></a></td>
                                 <td><img style="width:150px; height:150px;" src="../inc/uploads/<?= $row['product_image'] ?>" alt=""></td>
                                 <td><img style="width:150px; height:150px;" src="../inc/uploads/<?= $row['related_image'] ?>" alt=""></td>
                                 <td><img style="width:150px; height:150px;" src="../inc/uploads/<?= $row['applied_image'] ?>" alt=""></td>

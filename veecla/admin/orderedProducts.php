@@ -1,10 +1,10 @@
-<?php 
-    require_once __DIR__. "/adminHeader.php";
-    require_once __DIR__. "/../public/adminuser.classes.php";
-    require_once __DIR__. "/../public/adminuser.contr.php";
-    $is_admin = 0;
-    $rows = new AdminUserContr($is_admin);
-    $rows = $rows->userAdmin();
+<?php
+require_once __DIR__ . "/adminHeader.php";
+require_once __DIR__ . "/../public/cart.classes.php";
+require_once __DIR__ . "/../public/cartselect.contr.php";
+$is_product = 1;
+$rows = new SelectCartContr($is_product);
+$rows = $rows->productOrdered();
 
 ?>
 
@@ -12,10 +12,9 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-        For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
-
+    <h1 class="h3 mb-2 text-gray-800">Ordered Products | Items in Cart</h1>
+    <p class="mb-4">All products of different categoreis <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+    <!-- <a target="_blank" href="https://datatables.net">official DataTables documentation</a> -->
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -26,17 +25,18 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Username</th>
-                            <th>E-mail</th>
-                            <th>Start date</th>
+
+
+                            <th>Product|Name</th>
+                            <th>Product|Price</th>
+                            <th>Product|Quantity</th>
+                            <th>Total|Price</th>
+                            <th>Product|Image</th>
+                            <th>UserId</th>
                             <th>Status</th>
-                            <th>Delete</th>
-                            <th>Edit</th>
-                            <th>Image</th>
                         </tr>
                     </thead>
-                    <tfoot>
+                    <!-- <tfoot>
                         <tr>
                             <th>Name</th>
                             <th>Position</th>
@@ -47,26 +47,28 @@
                             <th>Image</th>
 
                         </tr>
-                    </tfoot>
+                    </tfoot> -->
                     <tbody>
-                        <?php 
-                            foreach($rows as $row):
-                        
+                        <?php
+                        foreach ($rows as $row) :
+
                         ?>
-                        <tr>
-                            <td><?= $row['fullName']?></td>
-                            <td><?= $row['username'] ?></td>
-                            <td><?= $row['email'] ?></td>
-                            <td><?= $row['created_at'] ?></td>
-                            <td><?= $row['seconds_since_activity'] < 300 ? "<div class='alert alert-success'>Online</div>" : "<div class='alert alert-danger'>Offline</div>" ?></td>
-                            <td><a href="deleteUser.inc.php?id=<?= $row['id']; ?>" class="btn-del btn alert-danger"><i class="fa fa-trash"></i></a></td>
-                            <td><a href="delete_users.php?id=<?= $row['id']; ?>" class="btn-del btn alert-warning"><i class="fa fa-edit"></i></a></td>
+                            <tr>
 
 
-                            <td><img style="width:120px; height:120px;" src="../inc/profileUploads/<?= $row['profileImage']; ?>" alt=""></td>
-                        </tr>
-                        <?php endforeach?>
-                       
+                                <td><?= $row['product_name'] ?></td>
+
+                                <td>$<?= $row['product_price'] ?></td>
+
+
+                                <td><?= $row['product_quantity'] ?></td>
+                                <td>$<?= $row['product_quantity'] * $row['product_price'] ?></td>
+                                <td><img style="width:150px; height:150px;" src="../inc/uploads/<?= $row['product_image'] ?>" alt=""></td>
+                                <td><?= $row['users_id'] ?></td>
+                                <td><div class="alert alert-warning">Pending</div></td>
+                            </tr>
+                        <?php endforeach ?>
+
                     </tbody>
                 </table>
             </div>
@@ -135,6 +137,7 @@
 
 <!-- Page level custom scripts -->
 <script src="js/demo/datatables-demo.js"></script>
+<script src="../assets/bootstrap/bootstrap.js"></script>
 
 </body>
 

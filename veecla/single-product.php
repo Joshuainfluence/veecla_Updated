@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . "/header.php";
 require_once __DIR__ . "/config/session.php";
-
+$userid = $_SESSION['id'];
 ?>
 <!-- ***** Header Area End ***** -->
 
@@ -250,8 +250,6 @@ require_once __DIR__ . "/config/session.php";
                         </div>
                         <div class="total">
                             <h4 id="totalPrice">$<?= $row['product_price'] ?></h4>
-                            
-                        
 
 
 
@@ -259,7 +257,7 @@ require_once __DIR__ . "/config/session.php";
                             require_once __DIR__ . "/public/cart.classes.php";
                             require_once __DIR__ . "/public/cartSelect.contr.php";
                             $productId = $row['id'];
-                            $carts = new SelectCartContr($productId);
+                            $carts = new ProductExistContr($productId, $userid);
                             $isProductInCart = $carts->existProduct();
 
                             // Check if $isProductInCart is defined and not empty
@@ -270,7 +268,25 @@ require_once __DIR__ . "/config/session.php";
                                 </div>
                             <?php } else { ?>
                                 <div class="main-border-button">
-                                    <a href="inc/cart.inc.php?id=<?= $productId ?>">Add To Cart</a>
+                                    <script>
+                                        console.log(updateTotal)
+                                    </script>
+                                    <a id="addToCartBtn" href="#">Add To Cart</a>
+
+                                    <script>
+                                        document.getElementById("addToCartBtn").addEventListener("click", function() {
+                                            // Get the product quantity
+                                            var productQuantity = document.getElementById("countLabel").innerHTML;
+                                            // Get the product ID
+                                            var productId = <?= $productId ?>;
+                                            // Construct the URL with the product ID and quantity
+                                            var url = "inc/cart.inc.php?id=" + productId + "&quantity=" + productQuantity;
+                                            // Redirect to the backend script with the correct URL
+                                            window.location.href = url;
+                                        });
+                                    </script>
+
+
                                 </div>
                             <?php } ?>
                         </div>

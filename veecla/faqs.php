@@ -4,13 +4,7 @@ require_once __DIR__ . "/header.php";
 ?>
 <div class="container" style="margin-top:10%;">
     <div class="row contain">
-        <div class="col-lg-12">
-            <h3>FAQS</h3>
-            <p>PRODUCTS</p>
-            <p>SHIPPING</p>
-            <p>ORDERS AND PAYMENTS</p>
-            <p>RETURNS AND REFUNDS</p>
-        </div>
+        
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-lg-12">

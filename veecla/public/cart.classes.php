@@ -44,11 +44,11 @@ class Cart extends Dbh
         return $data;
     }
 
-    protected function productExist($id)
+    protected function productExist($id, $userid)
     {
-        $sql = "SELECT * FROM cart WHERE product_id = ? AND userid = ?";
+        $sql = "SELECT * FROM cart WHERE product_id = ? AND users_id = ?";
         $stmt = $this->connection()->prepare($sql);
-        if (!$stmt->execute([$id])) {
+        if (!$stmt->execute([$id, $userid])) {
             $stmt = null;
             header("Location: checkout.php? failed to display");
             exit();
@@ -68,5 +68,18 @@ class Cart extends Dbh
         }
 
         $stmt = null;
+    }
+
+    protected function OrderedProducts($is_product){
+        $sql = "SELECT * FROM cart WHERE is_product = ?";
+        $stmt = $this->connection()->prepare($sql);
+        if (!$stmt->execute([$is_product])) {
+            $stmt = null;
+            exit();
+            
+        }
+
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
     }
 }

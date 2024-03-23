@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . "/../config/session.php";
+$_SESSION['location'] = "Nigeria";
 ?>
 
 <!DOCTYPE html>
@@ -13,12 +14,12 @@ require_once __DIR__ . "/../config/session.php";
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>VEECLA Admin - Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+    <link rel="icon" type="image/x-icon" href="../assets/images/logo5.png" />
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <script src="../assets/js/bootstrap.min.js"></script>
@@ -37,18 +38,39 @@ require_once __DIR__ . "/../config/session.php";
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
+           
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">VEECLA <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">VEECLA</div>
             </a>
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
-            </a>
+            <a class="background-img" href="index.html">
+              
+              <!-- <div class="sidebar-brand-icon rotate-n-15">
+                  <i class="fas fa-laugh-wink"></i>
+              </div> -->
+              <!-- <div class="sidebar-brand-text mx-3">VEECLA <sup>2</sup></div> -->
+              <style>
+                  .background-img{
+                      background-image: url(../assets/images/aunty_vic.jpg);
+                      background-size: cover;
+                      width: 100%;
+                      height:200px;
+                      
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                  }
+
+                  @media screen and (max-width:1200px) {
+                    .background-img{
+                        width: 100px;
+                        height: 100px;
+                    }
+                  }
+              </style>
+          </a>
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
@@ -74,10 +96,10 @@ require_once __DIR__ . "/../config/session.php";
                     <span>Administration</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-success py-2 collapse-inner rounded">
+                    <div class="bg-primary py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Admin Components:</h6>
-                        <a class="collapse-item" href="buttons.html">View Admins</a>
-                        <a class="collapse-item" href="cards.html">Add Admin</a>
+                        <a class="collapse-item" href="viewAdmin.php">View Admins</a>
+                        <a class="collapse-item" href="addAdmin.php">Add Admin</a>
                     </div>
                 </div>
             </li>
@@ -89,11 +111,11 @@ require_once __DIR__ . "/../config/session.php";
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUser" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Users</span>
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Customers</span>
                 </a>
                 <div id="collapseUser" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-success py-2 collapse-inner rounded">
+                    <div class="bg-primary py-2 collapse-inner rounded">
                         <h6 class="collapse-header">User Components:</h6>
                         <a class="collapse-item" href="viewUsers.php">View Users</a>
                         <a class="collapse-item" href="cards.html">User activities</a>
@@ -109,7 +131,7 @@ require_once __DIR__ . "/../config/session.php";
                     <span>Products</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="bg-success py-2 collapse-inner rounded">
+                    <div class="bg-primary py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Product Utilities:</h6>
                         <a class="collapse-item" href="viewproduct.php">View Products</a>
                         <a class="collapse-item" href="addProduct.php">Add Product</a>
@@ -134,7 +156,7 @@ require_once __DIR__ . "/../config/session.php";
                     <span>Pages</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-success py-2 collapse-inner rounded">
+                    <div class="bg-primary py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Home</h6>
                         <a class="collapse-item" href="../home.php?id=home">Home</a>
 
@@ -149,24 +171,147 @@ require_once __DIR__ . "/../config/session.php";
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#sales" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Sales</span>
+                </a>
+                <div id="sales" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-primary py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Home</h6>
+                        <a class="collapse-item" href="orderedProducts.php">Ordered Products</a>
+
+                        <a class="collapse-item" href="../about.php?id=about">About Us</a>
+                        <a class="collapse-item" href="../contact.php?id=contact">Contact Us</a>
+                        <a class="collapse-item" href="../faqs.php?id=faqs">FAQs</a>
+                        <a class="collapse-item" href="../products.php?id=product">Products</a>
+                        
+                        <div class="collapse-divider"></div>
+                        
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#newsletter" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Marketing</span>
+                </a>
+                <div id="newsletter" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-primary py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Home</h6>
+                        <a class="collapse-item" href="addNewsletter.php">Newsletters</a>
+
+                        <a class="collapse-item" href="viewSubscribers.php">Subscribers</a>
+                        <a class="collapse-item" href="../contact.php?id=contact">Flash deals</a>
+                        <a class="collapse-item" href="../faqs.php?id=faqs">FAQs</a>
+                        <a class="collapse-item" href="../products.php?id=product">Products</a>
+                        
+                        <div class="collapse-divider"></div>
+                        
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#websitesetup" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Website Setup</span>
+                </a>
+                <div id="websitesetup" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-primary py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Home</h6>
+                        <a class="collapse-item" href="../home.php?id=home">Home</a>
+
+                        <a class="collapse-item" href="../about.php?id=about">About Us</a>
+                        <a class="collapse-item" href="../contact.php?id=contact">Contact Us</a>
+                        <a class="collapse-item" href="../faqs.php?id=faqs">FAQs</a>
+                        <a class="collapse-item" href="../products.php?id=product">Products</a>
+                        
+                        <div class="collapse-divider"></div>
+                        
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#reports" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-file"></i>
+                    <span>Reports</span>
+                </a>
+                <div id="reports" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-primary py-2 collapse-inner rounded">
+                        <h6 class="collapse-header"></h6>
+                        <a class="collapse-item" href="../home.php?id=home">User Searches</a>
+
+                        <a class="collapse-item" href="../about.php?id=about">Top ordered</a>
+                        <a class="collapse-item" href="../contact.php?id=contact">Contact Us</a>
+                        <a class="collapse-item" href="../faqs.php?id=faqs">FAQs</a>
+                        <a class="collapse-item" href="../products.php?id=product">Products</a>
+                        
+                        <div class="collapse-divider"></div>
+                        
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#chats" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-info"></i>
+                    <span>Chats</span>
+                </a>
+                <div id="chats" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-primary py-2 collapse-inner rounded">
+                        <h6 class="collapse-header"></h6>
+                        <a class="collapse-item" href="../home.php?id=home">User Searches</a>
+
+                        <a class="collapse-item" href="../about.php?id=about">Top ordered</a>
+                        <a class="collapse-item" href="../contact.php?id=contact">Contact Us</a>
+                        <a class="collapse-item" href="../faqs.php?id=faqs">FAQs</a>
+                        <a class="collapse-item" href="../products.php?id=product">Products</a>
+                        
+                        <div class="collapse-divider"></div>
+                        
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#workers" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Workers</span>
+                </a>
+                <div id="workers" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-primary py-2 collapse-inner rounded">
+                        <h6 class="collapse-header"></h6>
+                        <a class="collapse-item" href="../home.php?id=home">Delivery boy</a>
+
+                        <a class="collapse-item" href="../about.php?id=about">Top ordered</a>
+                        <a class="collapse-item" href="../contact.php?id=contact">Contact Us</a>
+                        <a class="collapse-item" href="../faqs.php?id=faqs">FAQs</a>
+                        <a class="collapse-item" href="../products.php?id=product">Products</a>
+                        
+                        <div class="collapse-divider"></div>
+                        
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="charts.html">
+                    <i class="fas fa-fw fa-bell"></i>
+                    <span>Send Notification</span></a>
+            </li>
+            
+
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Charts</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="product.html">
-                    <i class="fas fa-fw fa-shopping-cart"></i>
-                    <span>Add product</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
+            
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -177,11 +322,11 @@ require_once __DIR__ . "/../config/session.php";
             </div>
 
             <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
+            <!-- <div class="sidebar-card d-none d-lg-flex">
                 <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
                 <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
                 <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-            </div>
+            </div> -->
 
         </ul>
         <!-- End of Sidebar -->

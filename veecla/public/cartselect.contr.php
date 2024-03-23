@@ -4,6 +4,7 @@ class SelectCartContr extends Cart
 {
     private $productId;
 
+
     public function __construct($productId)
     {
         $this->productId = $productId;
@@ -18,11 +19,35 @@ class SelectCartContr extends Cart
         return $this->selectCart($this->productId);
     }
 
-    public function existProduct(){
+    // method to display ordered products to the admin pagae
+
+    public function productOrdered(){
         if ($this->productId == 0) {
             exit();
         }
 
-        return $this->productExist($this->productId);
+        $result = $this->OrderedProducts($this->productId);
+        return $result;
+    }
+
+    
+}
+
+class ProductExistContr extends Cart {
+    private $productId;
+    private $userid;
+
+    public function __construct($productId, $userid)
+    {
+        $this->productId = $productId;
+        $this->userid = $userid;
+    }
+
+    public function existProduct(){
+        if ($this->productId == 0 && $this->userid == 0) {
+            exit();
+        }
+
+        return $this->productExist($this->productId, $this->userid);
     }
 }

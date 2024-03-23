@@ -18,6 +18,7 @@ if (isset($_POST['suggestion'])) {
 
             if (strpos($productName, $name) !== false) {
                 echo "<a href='single-product.php?id=$id' class='text-danger'>$productName</a>";
+                
                 echo "<br>";
             }
         }

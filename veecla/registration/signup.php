@@ -9,7 +9,7 @@ require_once __DIR__ . "/../config/session.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   
+
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -24,24 +24,24 @@ require_once __DIR__ . "/../config/session.php";
 
 <body>
 
-<style>
-    .script{
-        z-index: 9999;
-    }
-</style>
- <div class="script">
- <script>
-        window.onload = function() {
-            <?php if (isset($_SESSION['success'])) : ?>
-                Swal.fire("Success", "<?= $_SESSION['success'] ?>", "success");
-            <?php endif ?>
+    <style>
+        .script {
+            z-index: 9999;
+        }
+    </style>
+    <div class="script">
+        <script>
+            window.onload = function() {
+                <?php if (isset($_SESSION['success'])) : ?>
+                    Swal.fire("Success", "<?= $_SESSION['success'] ?>", "success");
+                <?php endif ?>
 
-            <?php if (isset($_SESSION['error'])) : ?>
-                Swal.fire("Error", "<?= $_SESSION['error'] ?>", "error");
-            <?php endif ?>
-        };
-    </script>
- </div>
+                <?php if (isset($_SESSION['error'])) : ?>
+                    Swal.fire("Error", "<?= $_SESSION['error'] ?>", "error");
+                <?php endif ?>
+            };
+        </script>
+    </div>
     <?php
     if (isset($_SESSION['success'])) :
         echo '<script>console.log("Success message: ' . $_SESSION['success'] . '");</script>';
@@ -72,6 +72,9 @@ require_once __DIR__ . "/../config/session.php";
 
             </div>
             <div class="content">
+                <div class="logo-img">
+                    <img src="../assets/images/logologo.png" alt="">
+                </div>
                 <div class="title">
                     Create a free Account
                 </div>
