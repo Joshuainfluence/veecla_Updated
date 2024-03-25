@@ -9,7 +9,7 @@ require_once __DIR__ . "/config/session.php";
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <li class="scroll-to-sectio" id="google_translate_element"></li>
+                <li class="scroll-to-section" id="google_translate_element"></li>
                 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                 <script>
                     function googleTranslateElementInit() {
@@ -196,7 +196,7 @@ require_once __DIR__ . "/config/session.php";
 <!-- ***** Men Area Ends ***** -->
 
 <!-- ***** Women Area Starts ***** -->
-<section class="section" id="women">
+<section class="section" id="fragrance">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -259,7 +259,7 @@ require_once __DIR__ . "/config/session.php";
 <!-- ***** Women Area Ends ***** -->
 
 <!-- ***** Kids Area Starts ***** -->
-<section class="section" id="kids">
+<section class="section" id="fashion">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -521,12 +521,34 @@ require_once __DIR__ . "/config/session.php";
             <div class="col-2">
                 <div class="thumb">
                     <div class="icon">
-                        <a href="http://instagram.com">
+                        <a href="http://instagram.com" target="_blank">
                             <h6>Fashion</h6>
                             <i class="fa fa-instagram"></i>
                         </a>
                     </div>
                     <img src="assets/images/instagram-01.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="thumb">
+                    <div class="icon">
+                        <a href="http://instagram.com">
+                            <h6>New</h6>
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                    <img src="assets/images/instagram-02.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="thumb">
+                    <div class="icon">
+                        <a href="http://instagram.com">
+                            <h6>New</h6>
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                    <img src="assets/images/instagram-02.jpg" alt="">
                 </div>
             </div>
             <div class="col-2">

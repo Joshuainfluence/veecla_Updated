@@ -266,7 +266,9 @@ $userid = $_SESSION['id'];
                                 <div class="main-border-button">
                                     <p>Already Added</p>
                                 </div>
-                            <?php } else { ?>
+                            <?php
+                            } else {
+                            ?>
                                 <div class="main-border-button">
                                     <script>
                                         console.log(updateTotal)
