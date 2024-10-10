@@ -31,7 +31,19 @@ require_once __DIR__ . "/config/session.php";
                         <div class="inner-content">
                             <h4>We Are VeeclaShop</h4>
                             <h4></h4>
-                            <span>Realising true beauty <br><?= $_SESSION['location'] ?></span>
+                            <span>Realising true beauty <br>
+                                <?php
+                                if (isset($_SESSION['location'])) {
+                                    echo $_SESSION['location'];
+                                } else {
+                                    echo "Nigeria";
+                                }
+
+                                ?>
+
+
+
+                            </span>
 
                             <div class="main-border-button">
                                 <a href="#">Purchase Now!</a>
@@ -116,11 +128,12 @@ require_once __DIR__ . "/config/session.php";
                                             <h4>Accessories</h4>
                                             <!-- <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p> -->
                                             <div class="main-border-button">
-                                            <a href="#">Discover More</a>
+                                                <a href="#">Discover More</a>
+                                            </div>
                                         </div>
                                     </div>
+                                    <img src="assets/images/003.jpg">
                                 </div>
-                                <img src="assets/images/003.jpg">
                             </div>
                         </div>
                     </div>
@@ -128,7 +141,6 @@ require_once __DIR__ . "/config/session.php";
             </div>
         </div>
     </div>
-</div>
 </div>
 <!-- ***** Main Banner Area End ***** -->
 
@@ -161,7 +173,7 @@ require_once __DIR__ . "/config/session.php";
                         <?php
                         if (count($rows, COUNT_NORMAL) == 0) {
                         ?>
-                        <!-- <p>No product added to this category yet</p> -->
+                            <!-- <p>No product added to this category yet</p> -->
                         <?php
                         } else {
                         ?>

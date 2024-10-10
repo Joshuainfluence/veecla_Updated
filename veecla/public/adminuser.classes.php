@@ -42,4 +42,17 @@ class AdminUser extends Dbh{
 
         $stmt = null;
     }
+
+    protected function notifyUser($topic, $content, $userid){
+        $sql = "INSERT INTO notifications (topic, content, userId) VALUES (?, ?, ?)";
+        $stmt = $this->connection()->prepare($sql);
+         if (!$stmt->execute([$topic, $content, $userid])) {
+            $stmt = null;
+            header("Location: index.php?notification failed");
+            exit();
+         }
+
+         $stmt = null;
+
+    }
 }

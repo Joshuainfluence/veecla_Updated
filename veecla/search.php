@@ -36,7 +36,9 @@ require_once __DIR__ . "/header.php";
                         <!-- </div> -->
                         <!-- <div class="col-2"> -->
 
-                            <button type="submit" id="form-submit" class="main-dark-button">Search</button>
+                            <!-- <button type="submit" id="form-submit" class="main-dark-button">Search</button> -->
+                            <button type="submit" id="form-submit" class="btn btn-outline-dark">Search</button>
+
                            
                         <!-- </div> -->
                     </div>

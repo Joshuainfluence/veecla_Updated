@@ -34,7 +34,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 5px 5px 5px grey;
+    /* box-shadow: 5px 5px 5px 5px grey; */
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
     background-image: url(../images/affordability.png);
     object-fit: cover;
     background-size: cover;
@@ -51,7 +52,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 5px 5px 5px grey;
+    /* box-shadow: 5px 5px 5px 5px grey; */
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
     margin-right: 5%;
     background: #fff;
 }
@@ -117,6 +119,7 @@
     border: 1px solid #FF87CE;
     font-size: 20px;
     color: #fff;
+    transition: 0.3s all ease;
 }
 .btn:hover{
     cursor: pointer;

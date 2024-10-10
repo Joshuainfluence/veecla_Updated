@@ -25,9 +25,26 @@ foreach ($rows as $row):
                         <div class="d-flex flex-column align-items-center text-center">
                             <img src="inc/profileUploads/<?= $row['profileImage'] ?>" alt="Admin" width="400">
                             <div class="mt-3">
-                                <h4><?= strtoupper($row['fullName']) ?></h4>
-                                <p class="text-secondary mb-1">Chief Executive Officer</p>
-                                <p class="text-muted font-size-sm">Asaba Delta State, Nigeria.</p>
+                                <div class="mb-2 d-flex justify-content-between">
+                                    <h4><?= strtoupper($row['fullName']) ?></h4>
+                                    <?php
+                                    if ($row['Vstatus'] == "verified") {
+                                    ?>
+                                        <img src="assets/images/verify.jpeg" style="width: 30px; margin-top: -0.2rem;" class="me-2" alt="">
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+                                <p class="text-secondary mb-1"><?= ucfirst($row['Vstatus']) ?></p>
+                                <p class="text-muted font-size-sm">
+                                    <?php
+                                    if (!empty($row['address'])) {
+                                    ?>
+                                        <?= $row['address'] ?>
+                                    <?php
+                                    }
+                                    ?>
+                                </p>
                                 <!-- <button class="btn btn-primary">Follow</button>
                         <button class="btn btn-outline-primary">Message</button> -->
                             </div>
@@ -35,6 +52,8 @@ foreach ($rows as $row):
                     </div>
                 </div>
             </div>
+
+           
             <div class="col-md-6">
                 <div class="card mb-3">
                     <div class="card-body">
@@ -43,16 +62,16 @@ foreach ($rows as $row):
                                 <h6 class="mb-0">Full Name</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                <?= $row['fullName']?>
+                                <?= ucwords($row['fullName']) ?>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Office</h6>
+                                <h6 class="mb-0">Account</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                Chief Executive Officer
+                                <?= ucfirst($row['Vstatus']) ?>
                             </div>
                         </div>
 
@@ -62,7 +81,7 @@ foreach ($rows as $row):
                                 <h6 class="mb-0">Email</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                <?= $row['email']?>
+                                <?= ucfirst($row['email']) ?>
                             </div>
                         </div>
                         <hr>
@@ -71,30 +90,62 @@ foreach ($rows as $row):
                                 <h6 class="mb-0">Username</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                <?= $row['username']?>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <h6 class="mb-0">Phone</h6>
-                            </div>
-                            <div class="col-sm-9 text-secondary">
-                                0810 585 6127
+                                <?= ucfirst($row['username']) ?>
                             </div>
                         </div>
                         <hr>
 
-
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Address</h6>
+                                <h6 class="mb-0">Date Registered</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                Delta State, Nigeria
+                                <?= date('M j Y', strtotime($row['created_at'])) ?>
                             </div>
                         </div>
                         <hr>
+                        <?php
+                        if (!empty($row['phone'])) {
+                        ?>
+                            <div class="row">
+
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Phone</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <?= $row['phone'] ?>
+                                </div>
+
+                            </div>
+
+                            <hr>
+                        <?php
+                        }
+                        ?>
+
+                        <?php
+                        if (!empty($row['address'])) {
+                        ?>
+                            <div class="row">
+
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Address</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <?= ucwords($row['address']) ?>
+
+                                </div>
+                            </div>
+                            <hr>
+                        <?php
+                        }
+                        ?>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <a href="usersetting.php?id=usersetting" class="text-decoration-none text-secondary fs-2">Settings<i class="fa fa-cog"></i></a>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>

@@ -76,6 +76,161 @@ https://templatemo.com/tm-571-hexashop
                                 <li class="scroll-to-section"><a href="#fashion">Fashion</a></li>
                                 <li class="scroll-to-section"><a href="#accessories">Accessories</a></li>
                                 <li><a href="search.php?id=search"><i class="fa fa-search"></i></a></li>
+                                <li class="myhover"><a href="search.php?id=search"><i class="fa fa-bell"></i></a>
+                                    <div class="notification">
+                                        <div class="heading">
+                                            Message center
+                                        </div>
+                                        <div class="body">
+                                            <div class="chat">
+
+                                                <div class="image">
+                                                    <img src="assets/images/aunty_vic.jpg" alt="">
+                                                </div>
+                                                <div class="message">
+                                                    <h1>Account verification</h1>
+                                                    <p>Hello Joshua Onyeuku... 1hr ago</p>
+
+                                                </div>
+                                                <div class="del">
+                                                    <a href=""><i class="fa fa-trash"></i></a>
+                                                </div>
+
+
+                                            </div>
+                                            <hr>
+                                            <div class="chat">
+
+                                                <div class="image">
+                                                    <img src="assets/images/aunty_vic.jpg" alt="">
+                                                </div>
+                                                <div class="message">
+                                                    <h1>Account verification</h1>
+                                                    <p>Hello Joshua Onyeuku... 1hr ago</p>
+                                                </div>
+                                                <div class="del">
+                                                    <a href=""><i class="fa fa-trash"></i></a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <style>
+                                        .notification {
+                                            position: absolute;
+                                            width: 300px;
+                                            height: 300px;
+                                            /* border-top: 1px solid blue; */
+                                            border: 1px solid #fcfcfc;
+                                            /* border-top-left-radius: 10px; */
+                                            right: 0;
+                                            border-radius: 5px;
+                                            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+                                            display: none;
+                                            transition: 1.3s all ease;
+                                            z-index: 999999;
+                                            background: blue;
+
+                                        }
+
+                                        .myhover:hover .notification {
+                                            display: block;
+                                            /* top: 1rem; */
+                                            transition: 0.3s all ease;
+                                        }
+
+                                        .notification .heading {
+                                            width: 100%;
+                                            height: 10%;
+                                            /* background: blue; */
+                                            top: 0;
+                                            right: 0;
+                                            padding: 0.4rem 0 0.4rem 1rem;
+                                            color: #ffff;
+                                        }
+
+                                        .notification .body {
+                                            width: 100%;
+                                            height: 90%;
+                                            background: #fff;
+
+                                        }
+
+
+                                        .notification .body .chat {
+                                            width: 100%;
+                                            height: 20%;
+                                            background: #fcfcfc;
+                                            display: flex;
+                                            padding: 0.3rem 1rem 0 1rem;
+                                            /* border: 1px solid green; */
+                                        }
+
+
+
+                                        .notification .body .chat .image {
+                                            width: 20%;
+                                            height: 50px;
+                                            display: flex;
+                                        }
+
+                                        .notification .body .chat .image img {
+                                            width: 100%;
+                                            height: 100%;
+                                            border-radius: 50px;
+                                        }
+
+                                        .notification .body .chat .message {
+                                            width: 70%;
+                                            height: 50px;
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: center;
+                                            padding: 0 1rem 0 1rem;
+                                            /* align-items: center; */
+
+                                        }
+
+                                        .notification .body .chat .message h1 {
+                                            font-size: 0.9rem;
+                                            font-weight: bold;
+                                        }
+
+                                        .notification .body .chat .message p {
+                                            font-size: 0.6rem;
+                                        }
+
+                                        .notification .body .chat .del {
+                                            width: 10%;
+                                            height: 50px;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                        }
+
+                                        @media screen and (max-width:900px) {
+                                            .notification {
+                                                position: absolute;
+                                                width: 300px;
+                                                height: 300px;
+                                                /* border-top: 1px solid blue; */
+                                                border: 1px solid #fcfcfc;
+                                                /* border-top-left-radius: 10px; */
+                                                right: 0;
+                                                left: 0;
+                                                border-radius: 5px;
+                                                box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+                                                display: none;
+                                                transition: 1.3s all ease;
+                                                z-index: 9999999999;
+                                                background: blue;
+                                                margin: 0 20% 0 20%;
+
+                                            }
+                                        }
+                                    </style>
+                                </li>
+
                                 <li class="scroll-to-section"><a href="#explore">Explore</a></li>
                                 <!-- <li class="scroll-to-section"><a href="#accessories">Vlog</a></li> -->
 
@@ -125,7 +280,7 @@ https://templatemo.com/tm-571-hexashop
                                         <li><a href="config/logout.php">Logout <i class="fa fa-sign-out"></i></a></li>
                                         <li><a href="cart.php?id=cart"><i class="fa fa-shopping-cart"></i></a></li>
                                         <li><a href="profile.php?id=profile">Profile</a></li>
-                                        <li><a href="#">Settings</a></li>
+                                        <li><a href="usersetting.php?id=usersetting">Settings</a></li>
                                     <?php
                                     } else {
                                     ?>

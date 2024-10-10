@@ -55,6 +55,7 @@ class Login extends Dbh
             $updateStmt = $this->connection()->prepare($updateSql);
             $updateStmt->execute([$_SESSION['id']]);  // Replace $userId with the actual user's ID
         }
+       
 
         $statement = null;
     }

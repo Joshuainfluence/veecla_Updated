@@ -70,11 +70,12 @@ $userid = $_SESSION['id'];
 
                 <div class="col-lg-6">
                     <div class="showPicture">
+                        
 
                         <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
 
                         <!-- Expanded image -->
-                        <img id="expandedImg" style="width:100%" height="500px">
+                        <img id="expandedImg" style="width:100%" height="500px" >
 
                     </div>
                     <!-- styling the display of images -->

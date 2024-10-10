@@ -128,6 +128,8 @@ $_SESSION['username'] = "veecla";
                         <div class="bg-primary py-2 collapse-inner rounded">
                             <h6 class="collapse-header">User Components:</h6>
                             <a class="collapse-item" href="viewUsers.php">View Users</a>
+                            <!-- <a class="collapse-item" href="viewUsers.php">Edit Users</a> -->
+
                             <a class="collapse-item" href="cards.html">User activities</a>
                         </div>
                     </div>

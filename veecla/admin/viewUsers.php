@@ -38,12 +38,13 @@
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
+                        <th>Name</th>
+                            <th>Username</th>
+                            <th>E-mail</th>
                             <th>Start date</th>
-                            <th>Salary</th>
+                            <th>Status</th>
+                            <th>Delete</th>
+                            <th>Edit</th>
                             <th>Image</th>
 
                         </tr>
@@ -57,10 +58,10 @@
                             <td><?= $row['fullName']?></td>
                             <td><?= $row['username'] ?></td>
                             <td><?= $row['email'] ?></td>
-                            <td><?= $row['created_at'] ?></td>
+                            <td><?= date('M j Y', strtotime($row['created_at'] ))?></td>
                             <td><?= $row['seconds_since_activity'] < 300 ? "<div class='alert alert-success shadow'>Online</div>" : "<div class='alert alert-danger shadow'>Offline</div>" ?></td>
                             <td><a href="deleteUser.inc.php?id=<?= $row['id']; ?>" class="btn-del btn alert-danger shadow"><i class="fa fa-trash"></i></a></td>
-                            <td><a href="delete_users.php?id=<?= $row['id']; ?>" class="btn-del btn alert-warning shadow"><i class="fa fa-edit"></i></a></td>
+                            <td><a href="userEdit.php?id=<?= $row['id']; ?>" class="btn-del btn alert-warning shadow"><i class="fa fa-edit"></i></a></td>
 
 
                             <td><img style="width:120px; height:120px;" src="../inc/profileUploads/<?= $row['profileImage']; ?>" alt=""></td>

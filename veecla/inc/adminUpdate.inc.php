@@ -20,7 +20,7 @@ if (isset($_POST['update'])) {
     $update= new AdminProfileSettingsUpdate($fullname, $email, $username, $password, $office, $mobile, $address, $_FILES, $id);
     $update= $update->updateAdmin();
     // i ma calling the header funciton before i return the statement, because it makes the browser respond fast
-    header("location: ../admin/adminAccountSettings.php?uploadsuccessful");
+    header("location: ../admin/adminAccountSettings.php?id=$id, uploadsuccessful");
     return $update;
    
 }
