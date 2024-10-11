@@ -33,7 +33,7 @@ class LoginContr extends Login{
     public function LogUser(){
         if ($this->emptyInput() == true) {
             $this->set_message("error", "Fields cannot be empty");
-            header("Location: ../registration/login.php?error=emptyinput");
+            header("Location: ../login.php?error=emptyinput");
             exit();
         }
         if ($this->AdminLogin() == true) {

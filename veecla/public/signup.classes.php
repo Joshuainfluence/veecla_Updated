@@ -19,7 +19,7 @@ class Signup extends Dbh{
 
         if (!$statement->execute()) {
             $statement = null;
-            header("Location: ../inc/signup.php?error=stmtfailed");
+            header("Location: ../signup.php?error=stmtfailed");
             exit();
         }
 
@@ -51,7 +51,7 @@ class Signup extends Dbh{
         $statement->bindParam(':email', $email);
         if (!$statement->execute()) {
             $statement = null;
-            header("Location: ../inc/signup.php?error=stmtfailed");
+            header("Location: ../signup.php?error=stmtfailed");
             exit();
         }
 

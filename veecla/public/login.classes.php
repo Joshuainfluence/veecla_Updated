@@ -12,14 +12,14 @@ class Login extends Dbh
         $statement =  $this->connection()->prepare($sql);
         if (!$statement->execute([$username, $password])) {
             $statement = null;
-            header("Location: ../registration/login.php");
+            header("Location: ../login.php");
             exit();
         }
 
         if ($statement->rowCount() == 0) {
             $statement = null;
             $this->set_message("error", "User not Found");
-            header("Location: ../registration/login.php");
+            header("Location: ../login.php");
             exit();
         }
 
@@ -29,19 +29,19 @@ class Login extends Dbh
         if ($checkPassword == false) {
             $statement = null;
             $this->set_message("error", "Incorrect Password");
-            header("Location: ../registration/login.php?error=wrongpassword");
+            header("Location: ../login.php?error=wrongpassword");
             exit();
         } elseif ($checkPassword == true) {
             $sql = "SELECT * FROM users WHERE username = ? OR email = ? AND password = ?";
             $statement = $this->connection()->prepare($sql);
             if (!$statement->execute([$username, $username, $password])) {
                 $statement = null;
-                header("Location: ../registration/login.php");
+                header("Location: ../login.php");
                 exit();
             }
             if ($statement->rowCount() == 0) {
                 $statement = null;
-                header("Location: ../registration/login.php");
+                header("Location: ../login.php");
                 exit();
             }
 

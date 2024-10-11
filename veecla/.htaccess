@@ -8,5 +8,5 @@ RewriteEngine On
 # Redirect any request not to actual files or directories to index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php?id=$1 [L,QSA]
+RewriteRule ^(.*)$ routes.php?id=$1 [L,QSA]
 

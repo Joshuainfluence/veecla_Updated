@@ -191,34 +191,34 @@ class SignupContr extends Signup
     {
         if ($this->emptyInput() == true) {
             $this->set_message("error", "Fields cannot be empty");
-            header("Location: ../registration/signup.php?error=emptyfields");
+            header("Location: ../signup");
             exit();
         }
         if ($this->passwordCheck() == true) {
             $this->set_message("error", "Passwords do not match");
-            header("Location: ../registration/signup.php??error=passwordmatch");
+            header("Location: ../signup.php??error=passwordmatch");
             exit();
         }
         if ($this->userTaken() == false) {
             $this->set_message("error", "User already exists");
-            header("Location: ../registration/signup.php?error=userTaken");
+            header("Location: ../signup.php?error=userTaken");
             exit();
         }
         if ($this->invalidEmail() == false) {
             $this->set_message("error", "Invalid Email format");
-            header("Location: ../registration/signup.php??error=invalidEmail");
+            header("Location: ../signup.php??error=invalidEmail");
             exit();
         }
 
         if ($this->invalidUsername() == false) {
             $this->set_message("error", "Invalid format");
-            header("Location: ../registration/signup.php??error=invalidUsername");
+            header("Location: ../signup.php??error=invalidUsername");
             exit();
         }
 
         if ($this->passwordLength() == false) {
             $this->set_message("error", "Password should not be less that 8 characters");
-            header("Location: ../registration/signup.php??error=Passwordtooshort");
+            header("Location: ../signup.php??error=Passwordtooshort");
             exit();
         }
         // for the image aspect
@@ -281,12 +281,12 @@ class EmailSubcription extends Signup
     {
         if ($this->emptyInput() == true) {
             $this->set_message("error", "Fields cannot be empty");
-            header("Location: ../registration/signup.php?error=emptyfields");
+            header("Location: ../signup");
             exit();
         }
         if ($this->invalidEmail() == false) {
             $this->set_message("error", "Invalid Email format");
-            header("Location: ../registration/signup.php??error=invalidEmail");
+            header("Location: ../signup?error=invalidEmail");
             exit();
         }
 

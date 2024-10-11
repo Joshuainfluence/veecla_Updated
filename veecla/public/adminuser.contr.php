@@ -78,4 +78,61 @@ class NotifyUser extends AdminUser
 
         $this->notifyUser($this->topic, $this->content, $this->userid);
     }
+
+    public function userEach(){
+        if ($this->isEmpty() == true) {
+            $this->set_message("error", "Fields cannot be empty");
+            header("Location: ../registration/signup.php?error=emptyfields");
+            exit();
+        }
+        $this->eachUser($this->userid);
+    }
+}
+
+
+class NotifyUserSpec extends AdminUser
+{
+   
+    private $userid;
+
+    public function __construct($userid)
+    {
+     
+        $this->userid = $userid;
+    }
+
+    private function isEmpty()
+    {
+        if (empty($this->userid)) {
+            $result = true;
+        } else {
+            $result = false;
+        }
+        return $result;
+    }
+
+    private function set_message($type, $message)
+    {
+        $_SESSION[$type] = $message;
+    }
+
+    public function userEach(){
+        if ($this->isEmpty() == true) {
+            $this->set_message("error", "Fields cannot be empty");
+            header("Location: ../registration/signup.php?error=emptyfields");
+            exit();
+        }
+        $details = $this->eachUser($this->userid);
+        return $details;
+    }
+
+    public function userEachSend(){
+        if ($this->isEmpty() == true) {
+            $this->set_message("error", "Fields cannot be empty");
+            header("Location: ../registration/signup.php?error=emptyfields");
+            exit();
+        }
+        $details = $this->eachUserSend($this->userid);
+        return $details;
+    }
 }

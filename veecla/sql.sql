@@ -117,6 +117,13 @@ CREATE TABLE admin(
     image varchar(1000) NOT NULL 
 )
 
+CREATE TABLE notifications(
+    id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    topic varchar(255) NOT NULL,
+    content varchar(1000) NOT NULL,
+    userid int(11) NOT NULL,
+    timing TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
 INSERT INTO admin (fullname, email, username, password, office, mobile, address, image) VALUES ('Victory Onyeonu', 'veeclaconcept@gmail.com', 'veecla', 'Veecla123', 'CEO', '08105856127', 'Delta state, Nigeria', 'CEO.jpg');
 
 UPDATE users SET last_activity = NOW() WHERE id = ?

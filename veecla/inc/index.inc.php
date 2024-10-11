@@ -6,5 +6,5 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     require_once __DIR__. "/../public/index.contr.php";
     $result = new Location($location);
     $_SESSION['location'] = $location;
-    header("Location: ../home.php?id=home");
+    header("Location: ../home");
 }

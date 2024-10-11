@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/../config/session.php";
+require_once __DIR__ . "/config/session.php";
 
 ?>
 <!DOCTYPE html>
@@ -9,21 +9,20 @@ require_once __DIR__ . "/../config/session.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+   
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../assets/sweetalert/sweetalert2.all.min.js"></script>
-    <script src="../assets/sweetalert/jquery-3.6.4.min.js"></script>
-    <link rel="icon" type="image/x-icon" href="../assets/images/logo5.png" />
+    <script src="assets/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="assets/sweetalert/jquery-3.6.4.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo5.png" />
     <!-- <link rel="stylesheet" href="../assets/font_awesome/css/font-awesome.css"> -->
-    <link rel="icon" type="image/x-icon" href="../img/logo5.png" />
-    <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="icon" type="image/x-icon" href="img/logo5.png" />
+    <link rel="stylesheet" href="assets/css/login.css">
 
 </head>
 
 <body>
-
     <style>
         .script {
             z-index: 9999;
@@ -52,62 +51,57 @@ require_once __DIR__ . "/../config/session.php";
     endif;
     ?>
     <div class="container">
+        <style>
+            .form-group a {
+                text-decoration: none;
+                text-align: start;
+                font-family: sans-serif;
+                color: #FF1694;
+            }
+
+            .form-group a:hover {
+                color: #FF87CE;
+                /* font-weight: 600; */
+            }
+
+            .password-container {
+                position: relative;
+            }
+
+            .toggle-password {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+                cursor: pointer;
+            }
+        </style>
 
         <div class="row">
-            <style>
-                .password-container {
-                    position: relative;
-                }
-
-                .toggle-password {
-                    position: absolute;
-                    top: 50%;
-                    right: 10px;
-                    transform: translateY(-50%);
-                    cursor: pointer;
-                }
-            </style>
 
             <div class="content-img">
 
             </div>
             <div class="content">
+                <!-- displays an alert when user signup in successfully -->
+                <div class="alert"></div>
                 <div class="logo-img">
-                    <img src="../assets/images/logologo.png" alt="">
+                    <img src="assets/images/logologo.png" alt="">
                 </div>
                 <div class="title">
-                    Create a free Account
+                    Login your Account to get access
                 </div>
-                <form action="../inc/signup.include.php" method="POST" enctype="multipart/form-data">
-
-                    <div class="form-group">
-                        <input type="text" name="fullName" id="fullName" placeholder="Full name" class="form-control">
-                    </div>
+                <form action="inc/login.include.php" method="POST">
                     <div class="form-group">
                         <input type="text" name="username" id="username" placeholder="Username" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="email" id="email" placeholder="Email address" class="form-control">
                     </div>
                     <div class="form-group password-container">
                         <input type="password" name="password" id="password" placeholder="Password" class="form-control">
                         <i class="fas fa-eye toggle-password" id="togglePassword"></i>
-                    </div>
-                    <div class="form-group password-container">
-                        <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" class="form-control">
-                        <i class="fas fa-eye toggle-password" id="toggleConfirmPassword"></i>
-                    </div>
 
-                    <div class="terms">
-                        <input type="file" name="profileImage" id="profileImage" value="Upload">
-                        <label for="file">Upload Profile Image</label>
                     </div>
-                    <div class="terms">
-                        <div class="check">
-                            <input type="checkbox" name="check" id="check">
-                            <label for="check"> I accept terms and conditions</label>
-                        </div>
-                        <a href="../log/terms.php">Read terms and conditions</a>
+                    <div class="form-group">
+                        <a href="../sendEmail/confirmEmail.php" class="forgotten">Forgotten Password</a>
                     </div>
                     <script>
                         $(document).ready(function() {
@@ -127,16 +121,15 @@ require_once __DIR__ . "/../config/session.php";
                         });
                     </script>
                     <div class="form-group">
-                        <input type="submit" name="submit" id="submit" class="btn" value="Signup">
+                        <input type="submit" name="submit" id="submit" class="btn" value="Login">
                     </div>
                     <div class="form-group">
-                        <p>Already have an account? <a href="login.php">Login</a></p>
+                        <p>Don't have an account? <a href="signup">Signup</a></p>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

@@ -55,7 +55,7 @@
                             <h3>Follow the link below to Create or Login your Account</h3>
                         </div>
                         <div class="col d-flex justify-content-center align-items-center">
-                            <a href="registration/login.php">Login Account</a>
+                            <a href="login">Login Account</a>
                         </div>
                     </div>
                 </div>

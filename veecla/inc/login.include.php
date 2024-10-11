@@ -13,7 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     
     $login->LogUser();
 
-    header("Location: ../home.php?id=home");
+    // header("Location: ../home.php?id=home");
+    header("Location: ../home");
+
 
     
 

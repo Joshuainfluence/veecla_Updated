@@ -43,6 +43,7 @@ class AdminUser extends Dbh{
         $stmt = null;
     }
 
+    // for notification of user
     protected function notifyUser($topic, $content, $userid){
         $sql = "INSERT INTO notifications (topic, content, userId) VALUES (?, ?, ?)";
         $stmt = $this->connection()->prepare($sql);
@@ -55,4 +56,38 @@ class AdminUser extends Dbh{
          $stmt = null;
 
     }
+
+    // each user to show notification
+    protected function eachUser($unique_id){
+        $sql = "SELECT * FROM notifications WHERE userId = ?";
+        $stmt = $this->connection()->prepare($sql);
+        if (!$stmt->execute([$unique_id])) {
+            $stmt = null;
+            // header("Location: index.php?errorviewingusers");
+            exit();
+        }
+        
+        $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        // the print_r($details) is actual working and it is getting the users from the database. So we are actually clear here
+        // print_r($details);
+        return $details;
+        
+    }
+
+        // each user to show notification
+        protected function eachUserSend($unique_id){
+            $sql = "SELECT * FROM users WHERE id = ?";
+            $stmt = $this->connection()->prepare($sql);
+            if (!$stmt->execute([$unique_id])) {
+                $stmt = null;
+                // header("Location: index.php?errorviewingusers");
+                exit();
+            }
+            
+            $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            // the print_r($details) is actual working and it is getting the users from the database. So we are actually clear here
+            // print_r($details);
+            return $details;
+            
+        }
 }
