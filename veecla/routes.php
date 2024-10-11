@@ -1,7 +1,27 @@
-<?php 
-// require_once 'routes.php';
+<?php
+
+
+// $routes = [
+//     '/' => 'home.php',
+//     'profile' => 'profile.php',
+//     '/settings' => 'usersetting.php',
+//     '/products' => 'products.php',
+//     '/privacy' => 'privacy.php',
+//     '/terms' => 'terms.php',
+// ];
+
+// $request = $_SERVER['REQUEST_URI'];
+
+// if (array_key_exists($request, $routes)) {
+//     require __DIR__ . '/' . $routes[$request];
+// } else {
+
+//     http_response_code(404);
+//     require __DIR__ . '/404.php'; 
+// }
+
 // Capture the URL after the domain (localhost/veecla_updated/veecla)
-$url = isset($_GET['id']) ? $_GET['id'] : '';
+$url = isset($_GET['url']) ? $_GET['url'] : '';
 
 // Split the URL into parts
 $url = explode('/', rtrim($url, '/'));
