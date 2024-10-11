@@ -77,14 +77,16 @@ https://templatemo.com/tm-571-hexashop
                                 <li class="scroll-to-section"><a href="#accessories">Accessories</a></li>
                                 <li><a href="search"><i class="fa fa-search"></i></a></li>
                                 <?php
-                                require_once __DIR__ . "/config/dbh.php";
-                                require_once __DIR__ . "/public/adminuser.classes.php";
-                                require_once __DIR__ . "/public/adminuser.contr.php";
-                                $notifications = new NotifyUserSpec($_SESSION['id']);
-                                $notifications = $notifications->userEach();
+
 
                                 ?>
-                                <?php if (isset($_SESSION['id'])) {
+                                <?php
+                                if (isset($_SESSION['id'])) {
+                                    require_once __DIR__ . "/config/dbh.php";
+                                    require_once __DIR__ . "/public/adminuser.classes.php";
+                                    require_once __DIR__ . "/public/adminuser.contr.php";
+                                    $notifications = new NotifyUserSpec($_SESSION['id']);
+                                    $notifications = $notifications->userEach();
                                 ?>
                                     <li class="myhover"><a href="notification" class="mihover"><i class="fa fa-bell"></i> </a><span>
                                             <?php
@@ -92,7 +94,8 @@ https://templatemo.com/tm-571-hexashop
                                             if ($value > 0) {
                                                 echo $value;
                                             }
-                                            ?></span>
+                                            ?>
+                                        </span>
                                         <style>
                                             .myhover span {
                                                 padding: 0rem 0.3rem 0rem 0.3rem;
@@ -275,10 +278,10 @@ https://templatemo.com/tm-571-hexashop
 
                                     </li>
                                 <?php
-                                }else{
-                                    ?>
+                                } else {
+                                ?>
 
-                                    <?php
+                                <?php
                                 }
 
                                 ?>

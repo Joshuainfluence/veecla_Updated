@@ -69,22 +69,24 @@ class NotifyUser extends AdminUser
     }
 
 
-    public function userNotify(){
-        if ($this->isEmpty() == true) {
-            $this->set_message("error", "Fields cannot be empty");
-            header("Location: ../registration/signup.php?error=emptyfields");
-            exit();
-        }
+    public function userNotify()
+    {
+        // if ($this->isEmpty() == true) {
+        //     $this->set_message("error", "Fields cannot be empty");
+        //     header("Location: ../registration/signup.php?error=emptyfields");
+        //     exit();
+        // }
 
         $this->notifyUser($this->topic, $this->content, $this->userid);
     }
 
-    public function userEach(){
-        if ($this->isEmpty() == true) {
-            $this->set_message("error", "Fields cannot be empty");
-            header("Location: ../registration/signup.php?error=emptyfields");
-            exit();
-        }
+    public function userEach()
+    {
+        // if ($this->isEmpty() == true) {
+        //     $this->set_message("error", "Fields cannot be empty");
+        //     header("Location: ../registration/signup.php?error=emptyfields");
+        //     exit();
+        // }
         $this->eachUser($this->userid);
     }
 }
@@ -92,12 +94,12 @@ class NotifyUser extends AdminUser
 
 class NotifyUserSpec extends AdminUser
 {
-   
+
     private $userid;
 
     public function __construct($userid)
     {
-     
+
         $this->userid = $userid;
     }
 
@@ -116,22 +118,24 @@ class NotifyUserSpec extends AdminUser
         $_SESSION[$type] = $message;
     }
 
-    public function userEach(){
-        if ($this->isEmpty() == true) {
-            $this->set_message("error", "Fields cannot be empty");
-            header("Location: ../registration/signup.php?error=emptyfields");
-            exit();
-        }
+    public function userEach()
+    {
+        // if ($this->isEmpty() == true) {
+        //     $this->set_message("error", "Fields cannot be empty");
+        //     header("Location: ../registration/signup.php?error=emptyfields");
+        //     exit();
+        // }
         $details = $this->eachUser($this->userid);
         return $details;
     }
 
-    public function userEachSend(){
-        if ($this->isEmpty() == true) {
-            $this->set_message("error", "Fields cannot be empty");
-            header("Location: ../registration/signup.php?error=emptyfields");
-            exit();
-        }
+    public function userEachSend()
+    {
+        // if ($this->isEmpty() == true) {
+        //     $this->set_message("error", "Fields cannot be empty");
+        //     header("Location: ../registration/signup.php?error=emptyfields");
+        //     exit();
+        // }
         $details = $this->eachUserSend($this->userid);
         return $details;
     }
